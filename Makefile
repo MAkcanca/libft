@@ -2,7 +2,7 @@
 
 NAME = libft.a
 CC = gcc
-FLAGS = -wall -werror -wextra
+FLAGS = -Wall -Werror -Wextra
 SOURCE = $(wildcard ft_*.c) # TODO: Replace this with list of sources later
 OBJ = $(SOURCE:.c=.o)
 
@@ -14,7 +14,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)
 
-clean: rm -f $(OBJ)
+clean: 
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
@@ -22,3 +23,6 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re main
+main: main.c $(NAME)
+	$(CC) $(FLAGS) main.c $(NAME) -o main
+	./main
