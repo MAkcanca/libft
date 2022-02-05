@@ -23,6 +23,6 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re main
-main: main.c $(NAME)
-	$(CC) $(FLAGS) main.c $(NAME) -o main
+main: .main.c $(NAME)
+	$(CC) $(FLAGS) .main.c $(NAME) -o main
 	./main
