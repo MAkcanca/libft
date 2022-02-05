@@ -6,16 +6,12 @@
 /*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 20:13:53 by makcanca          #+#    #+#             */
-/*   Updated: 2022/02/05 20:19:14 by makcanca         ###   ########.fr       */
+/*   Updated: 2022/02/05 20:23:35 by makcanca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*b;
-
-	b = s;
-	while (n-- > 0)
-		b[n] = 0;
+	ft_memset(s, 0, n);
 }
