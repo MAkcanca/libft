@@ -1,7 +1,14 @@
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <wchar.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 14:40:36 by makcanca          #+#    #+#             */
+/*   Updated: 2022/03/14 14:40:48 by makcanca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 void    *ft_calloc(size_t count, size_t size)
 {

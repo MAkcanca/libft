@@ -1,11 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 14:41:55 by makcanca          #+#    #+#             */
+/*   Updated: 2022/03/14 14:41:56 by makcanca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// strchr
-// Finds the first occurrence of the character c in the string s.
-// The terminating null character is considered to be part of the string.
-// If c is not found, the function returns a null pointer.
-// The strchr() function returns a pointer to the located character, or a null pointer if the character is not found.
-# include <stdlib.h>
-# include <string.h>
 
 char *ft_strchr(const char *s, int c)
 {
