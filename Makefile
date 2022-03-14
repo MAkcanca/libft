@@ -12,7 +12,7 @@ OBJ = $(SOURCE:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rc $(NAME) $(OBJ)
+	ar -rcs $@ $^
 
 clean: 
 	rm -f $(OBJ)
