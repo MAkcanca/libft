@@ -6,13 +6,13 @@
 /*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:41:03 by makcanca          #+#    #+#             */
-/*   Updated: 2022/03/14 16:45:19 by makcanca         ###   ########.fr       */
+/*   Updated: 2022/03/14 18:46:24 by makcanca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_get_nbrlen(int nb)
+static int	ft_get_nbrlen(int nb)
 {
 	int	len;
 
