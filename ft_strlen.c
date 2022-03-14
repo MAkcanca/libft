@@ -1,22 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/05 19:33:25 by makcanca          #+#    #+#             */
-/*   Updated: 2022/02/05 19:44:39 by makcanca         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(const char *c)
+size_t  ft_strlen(const char *s)
 {
-	size_t	l;
+    size_t  i;
 
-	l = 0;
-	while (c[l] != '\0')
-		l++;
-	return (l);
+    i = 0;
+    while (s[i])
+        i++;
+    return (i);
 }
