@@ -6,28 +6,27 @@
 /*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:43:36 by makcanca          #+#    #+#             */
-/*   Updated: 2022/03/14 14:43:37 by makcanca         ###   ########.fr       */
+/*   Updated: 2022/03/14 16:55:35 by makcanca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char    *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    size_t		size_s;
-	char		*newstring;
+	size_t	head;
+	size_t	tail;
+	char	*newstring;
 
 	if (!s1 || !set)
 		return (NULL);
-    size_s = ft_strlen(s1);
-    // Find the first non-trim character
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-    
-    // Find the last non-trim character
-	while (size_s && ft_strchr(set, s1[size_s]))
-		size_s--;
-
-	newstring = ft_substr((char*)s1, 0, size_s + 1);
+	head = 0;
+	tail = ft_strlen(s1);
+	while (s1[head] && ft_strchr(set, s1[head]))
+		head++;
+	while (s1[tail - 1] && ft_strchr(set, s1[tail - 1]) && tail > head)
+		tail--;
+	newstring = (char *)malloc(sizeof(char) * (tail - head + 1));
+	if (newstring)
+		ft_strlcpy(newstring, &s1[head], tail - head + 1);
 	return (newstring);
 }

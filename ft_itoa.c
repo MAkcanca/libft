@@ -6,47 +6,51 @@
 /*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:41:03 by makcanca          #+#    #+#             */
-/*   Updated: 2022/03/14 14:41:04 by makcanca         ###   ########.fr       */
+/*   Updated: 2022/03/14 16:45:19 by makcanca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_itoa(int n)
+int	ft_get_nbrlen(int nb)
 {
-    char *str;
-    int sign;
-    int len;
-    int nb;
+	int	len;
 
-    sign = 0;
-    len = 0;
-    nb = n;
-    if (n == -2147483648)
-        return (ft_strdup("-2147483648"));
-    if (n == 2147483647)
-        return (ft_strdup("2147483647"));
-    if (n < 0)
-    {
-        sign = 1;
-        nb = -n;
-    }
-    while (nb / 10)
-    {
-        nb /= 10;
-        len++;
-    }
-    str = (char *)malloc(sizeof(char) * (len + 2));
-    if (!str)
-        return (NULL);
-    str[len + 1] = '\0';
-    while (len >= 0)
-    {
-        str[len] = (n % 10) + '0';
-        n /= 10;
-        len--;
-    }
-    if (sign)
-        str[0] = '-';
-    return (str);
+	len = 0;
+	if (nb <= 0)
+		len++;
+	while (nb)
+	{
+		len++;
+		nb = nb / 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		len;
+	long	nb;
+
+	len = ft_get_nbrlen(n);
+	nb = n;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	if (nb < 0)
+	{
+		str[0] = '-';
+		nb *= -1;
+	}
+	if (nb == 0)
+		str[0] = '0';
+	str[len--] = '\0';
+	while (nb)
+	{
+		str[len] = (nb % 10) + '0';
+		nb /= 10;
+		len--;
+	}
+	return (str);
 }

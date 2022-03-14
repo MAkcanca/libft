@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 14:43:47 by makcanca          #+#    #+#             */
-/*   Updated: 2022/03/14 16:20:35 by makcanca         ###   ########.fr       */
+/*   Created: 2022/03/14 15:39:17 by makcanca          #+#    #+#             */
+/*   Updated: 2022/03/14 16:43:15 by makcanca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	else
-		return (c);
+	char	*result;
+
+	result = ft_itoa(n);
+	ft_putstr_fd(result, fd);
+	free(result);
 }

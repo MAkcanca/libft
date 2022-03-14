@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 14:43:47 by makcanca          #+#    #+#             */
-/*   Updated: 2022/03/14 16:20:35 by makcanca         ###   ########.fr       */
+/*   Created: 2022/03/14 16:07:51 by makcanca          #+#    #+#             */
+/*   Updated: 2022/03/14 16:13:32 by makcanca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	else
-		return (c);
+	size_t	len;
+	size_t	i;
+
+	if (!s || !f)
+		return ;
+	len = ft_strlen(s);
+	i = 0;
+	while (i < len)
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

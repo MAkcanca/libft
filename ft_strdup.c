@@ -6,7 +6,7 @@
 /*   By: makcanca <mustafa.akcanca@takyonai.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 21:45:17 by makcanca          #+#    #+#             */
-/*   Updated: 2022/02/05 21:47:36 by makcanca         ###   ########.fr       */
+/*   Updated: 2022/03/14 16:38:39 by makcanca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,6 +20,5 @@ char	*ft_strdup(const char *s)
 	new = malloc(len);
 	if (new == NULL)
 		return (NULL);
-
-	return (char *)memcpy(new, s, len);
+	return ((char *)ft_memcpy(new, s, len));
 }
